@@ -5,6 +5,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
         //18.10
@@ -123,7 +125,35 @@ class MainActivity : AppCompatActivity() {
             }
             else{nine_str.text = "-"}
 
+            //Вычисление итоговой цифры
+            val itog = findViewById<TextView>(R.id.itog)
+            var itog_val=sumA
 
+            if (sumA >=10){
+                while (itog_val>=10){
+                    val arr = itog_val.toString().toList()
+                    val arrOfInt = arr.map{ it.toString().toInt()}
+                    itog_val = arrOfInt.sum()
+
+                }
+                itog.text = "Итоговая цифра: $itog_val"
+
+            }
+            else{ itog.text = "Итоговая цифра: $sumA"}
+
+            //Вычисление психотипа
+            val psih = findViewById<TextView>(R.id.psih)
+            if (one > two){psih.text = "Психотип: I Психотип"}
+            if (one < two){psih.text = "Психотип: II Психотип"}
+            if (one == two){psih.text = "Психотип: III Психотип"}
+
+            //Вычисление возраста:
+            val formatter = SimpleDateFormat("yyyy")
+            val date = Date()
+            val current = formatter.format(date)
+            var age = current.toInt() - year.toInt()
+            val age_str = findViewById<TextView>(R.id.age)
+            age_str.text = "Возраст: $age"
         }
         //Конец функции
 
