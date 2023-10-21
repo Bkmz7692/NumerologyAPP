@@ -136,16 +136,17 @@ class MainActivity : AppCompatActivity() {
                     itog_val = arrOfInt.sum()
 
                 }
-                itog.text = "Итоговая цифра: $itog_val"
+                itog.text = itog_val.toString()
 
             }
-            else{ itog.text = "Итоговая цифра: $sumA"}
+            else{ itog.text = sumA.toString()
+            }
 
             //Вычисление психотипа
             val psih = findViewById<TextView>(R.id.psih)
-            if (one > two){psih.text = "Психотип: I Психотип"}
-            if (one < two){psih.text = "Психотип: II Психотип"}
-            if (one == two){psih.text = "Психотип: III Психотип"}
+            if (one > two){psih.text = "I"}
+            if (one < two){psih.text = "II"}
+            if (one == two){psih.text = "III"}
 
             //Вычисление возраста:
             val formatter = SimpleDateFormat("yyyy")
@@ -153,7 +154,7 @@ class MainActivity : AppCompatActivity() {
             val current = formatter.format(date)
             var age = current.toInt() - year.toInt()
             val age_str = findViewById<TextView>(R.id.age)
-            age_str.text = "Возраст: $age"
+            age_str.text = age.toString()
         }
         //Конец функции
 

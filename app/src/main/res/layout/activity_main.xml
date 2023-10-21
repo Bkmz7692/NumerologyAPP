@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/bg_gradient"
     tools:context=".MainActivity">
 
     <TextView
@@ -143,9 +143,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.018" />
+        app:layout_constraintVertical_bias="0.017" />
 
     <EditText
         android:id="@+id/date2"
@@ -155,10 +156,12 @@
         android:fontFamily="sans-serif-light"
         android:hint="Дата"
         android:inputType="date"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
         android:textAlignment="center"
         android:textColor="#303030"
         android:textColorHint="#303030"
-        android:textSize="34sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -190,36 +193,96 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/itog"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="sans-serif"
-            android:text="Итоговая цифра:"
-            android:textAlignment="center"
-            android:textColor="#303030"
-            android:textSize="24sp" />
+            android:layout_height="51dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/psih"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:fontFamily="sans-serif"
-            android:text="Психотип:"
-            android:textAlignment="center"
-            android:textColor="#303030"
-            android:textSize="24sp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="276dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Итоговая цифра:"
+                android:textAlignment="viewStart"
+                android:textColor="#303030"
+                android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/age"
+            <TextView
+                android:id="@+id/itog"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="#303030"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="-104dp"
+                tools:layout_editor_absoluteY="691dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:fontFamily="sans-serif"
-            android:text="Возраст"
-            android:textAlignment="center"
-            android:textColor="#303030"
-            android:textSize="24sp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="276dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Психотип:"
+                android:textAlignment="viewStart"
+                android:textColor="#303030"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/psih"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:fontFamily="sans-serif"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="#303030"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="276dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Возраст:"
+                android:textAlignment="textStart"
+                android:textColor="#303030"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:text="-"
+                android:textAlignment="center"
+                android:textColor="#303030"
+                android:textSize="24sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="40dp"
+        android:layout_height="31dp"
+        app:srcCompat="@drawable/dark_mamont"
+        tools:layout_editor_absoluteX="82dp"
+        tools:layout_editor_absoluteY="15dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
