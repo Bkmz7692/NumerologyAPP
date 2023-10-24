@@ -3,6 +3,7 @@ package com.bkmz7692.numlog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
@@ -14,9 +15,63 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var const = 2 //Глобальные переменные
+            val backspace = findViewById<ImageView>(R.id.back)
+            var textEdit = findViewById<EditText>(R.id.date2)
+            var firt_str= textEdit.text
+            val zero_str = findViewById<TextView>(R.id.zero_str)
+            val one_str = findViewById<TextView>(R.id.one)
+            val two_str = findViewById<TextView>(R.id.two)
+            val three_str = findViewById<TextView>(R.id.three)
+            val four_str = findViewById<TextView>(R.id.four)
+            val five_str = findViewById<TextView>(R.id.five)
+            val six_str = findViewById<TextView>(R.id.six)
+            val seven_str = findViewById<TextView>(R.id.seven)
+            val eight_str = findViewById<TextView>(R.id.eight)
+            val nine_str = findViewById<TextView>(R.id.nine)
+            backspace.setOnClickListener{
+                var temp = textEdit.text.toString()
+                textEdit.setText(temp.dropLast(1))
+            }
+            one_str.setOnClickListener{
+                if(textEdit.text.toString().length == 2 || textEdit.text.toString().length ==4){textEdit.setText(textEdit.text.toString()+".1")}
+                else{textEdit.setText(textEdit.text.toString()+".1")}
+            }
+            zero_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"0")
+            }
+            two_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"2")
+            }
+            three_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"3")
+            }
+            four_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"4")
+            }
+            five_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"5")
+            }
+            six_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"6")
+            }
+            seven_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"7")
+            }
+            eight_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"8")
+            }
+            nine_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"9")
+            }
+            one_str.setOnClickListener{
+                textEdit.setText(textEdit.text.toString()+"1")
+            }
         fun calculateNumerologicalMatrix() {
-            print("fun start\n")
-            val input = findViewById<EditText>(R.id.date2).text.toString()
+
+
+            var input = findViewById<EditText>(R.id.date2).text.toString()
+            println("BKLOG $input")
+
             val year = input.slice(input.length - 4 until input.length)
             println("Year = $year\n") // "ld!"
             if (year.toInt() >= 2000){
@@ -43,7 +98,7 @@ class MainActivity : AppCompatActivity() {
             }
 
 
-            var finalrow = digits + const.toString() + sumA.toString() + sumB.toString() +diffV.toString() + sumG.toString()
+            val finalrow = digits + const.toString() + sumA.toString() + sumB.toString() +diffV.toString() + sumG.toString()
 
             var charArray = finalrow.toCharArray()
             charArray.sort()
@@ -66,15 +121,7 @@ class MainActivity : AppCompatActivity() {
             val seven = counts['7'] ?: 0
             val eight = counts['8'] ?: 0
             val nine = counts['9'] ?: 0
-            val one_str = findViewById<TextView>(R.id.one)
-            val two_str = findViewById<TextView>(R.id.two)
-            val three_str = findViewById<TextView>(R.id.three)
-            val four_str = findViewById<TextView>(R.id.four)
-            val five_str = findViewById<TextView>(R.id.five)
-            val six_str = findViewById<TextView>(R.id.six)
-            val seven_str = findViewById<TextView>(R.id.seven)
-            val eight_str = findViewById<TextView>(R.id.eight)
-            val nine_str = findViewById<TextView>(R.id.nine)
+
             println("one = $one")
             if (one >0){
                 one_str.text = "1".repeat(one)
