@@ -168,46 +168,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.034" />
 
-        <EditText
-            android:id="@+id/date2"
-            android:layout_width="339dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="1224dp"
-            android:clickable="false"
-            android:cursorVisible="false"
-            android:editable="true"
-            android:ems="10"
-            android:fontFamily="sans-serif-light"
-            android:hint="Дата"
-            android:inputType="date"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="#303030"
-            android:textColorHint="#303030"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/calc"
             android:layout_width="253dp"
             android:layout_height="55dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="199dp"
+            android:layout_marginBottom="1126dp"
             android:background="@drawable/gradient"
             android:fontFamily="sans-serif-light"
             android:text="Рассчитать"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-            app:layout_constraintEnd_toEndOf="@+id/date2"
-            app:layout_constraintHorizontal_bias="0.581"
-            app:layout_constraintStart_toStartOf="@+id/date2"
-            app:layout_constraintTop_toBottomOf="@+id/date2" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -226,6 +201,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="333dp"
             android:layout_height="150dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="200dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -316,6 +292,76 @@
             </LinearLayout>
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="246dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="1100dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/day"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:hint="ДД"
+                android:inputType="date"
+                android:maxLength="2"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#292929"
+                android:textColorHint="#303030" />
+
+            <EditText
+                android:id="@+id/month"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:hint="ММ"
+                android:inputType="date"
+                android:maxLength="2"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#292929"
+                android:textColorHint="#303030" />
+
+            <EditText
+                android:id="@+id/years"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:cursorVisible="true"
+                android:ems="10"
+                android:fontFamily="sans-serif-light"
+                android:hint="ГГГГ"
+                android:inputType="date"
+                android:maxLength="4"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#292929"
+                android:textColorHint="#303030" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="5dp"
+            tools:layout_editor_absoluteY="2dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
