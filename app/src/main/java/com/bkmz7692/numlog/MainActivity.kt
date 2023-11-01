@@ -1,5 +1,6 @@
 package com.bkmz7692.numlog
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -8,6 +9,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -228,6 +234,62 @@ class MainActivity : AppCompatActivity() {
                 val toast = Toast.makeText(applicationContext, text, duration)
                 toast.show()}
 
+
+
+            //Графики
+            //Настройка данных
+            val lineChart = findViewById(R.id.lineChart) as LineChart
+
+            val sudba_arr = mutableListOf<Entry>()
+            sudba_arr.add(Entry(0f, 4f))
+            sudba_arr.add(Entry(12f, 9f))
+            sudba_arr.add(Entry(24f, 3f))
+            sudba_arr.add(Entry(36f, 9f))
+            sudba_arr.add(Entry(48f, 8f))
+            sudba_arr.add(Entry(64f, 6f))
+            sudba_arr.add(Entry(72f, 0f))
+
+            var sudba = LineDataSet(sudba_arr, "Судьба")
+            sudba.color = Color.CYAN
+
+            val volya_arr = mutableListOf<Entry>()
+            volya_arr.add(Entry(0f, 4f))
+            volya_arr.add(Entry(12f, 9f))
+            volya_arr.add(Entry(24f, 5f))
+            volya_arr.add(Entry(36f, 9f))
+            volya_arr.add(Entry(48f, 5f))
+            volya_arr.add(Entry(64f, 8f))
+            volya_arr.add(Entry(72f, 0f))
+
+            var volya = LineDataSet(volya_arr, "Воля")
+            volya.color = Color.RED
+
+
+            val lineData = LineData(sudba,volya)
+            lineChart.data = lineData
+
+            //Настройки графа
+            lineChart.setDrawBorders(false)
+            lineData.setDrawValues(false)
+            lineChart.description.isEnabled = false
+            lineChart.legend.isEnabled = true
+            lineChart.legend.isWordWrapEnabled = false
+            lineChart.setTouchEnabled(false)
+            lineChart.legend.textColor = Color.WHITE
+            lineChart.xAxis.setDrawGridLines(false)
+            lineChart.axisLeft.setDrawGridLines(false)
+            lineChart.axisLeft.mAxisMaximum = 10f
+            lineChart.xAxis.mAxisMaximum = 72f
+            lineChart.axisLeft.textColor = Color.WHITE
+            
+            //lineChart.xAxis.setDrawLabels(false)
+            lineChart.xAxis.textColor = Color.WHITE
+            lineChart.axisRight.isEnabled = false
+            lineChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+            lineChart.axisRight.setDrawGridLines(false)
+
+
+            lineChart.invalidate()
         }
         //Конец функции
 
