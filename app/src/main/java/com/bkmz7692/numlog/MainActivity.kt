@@ -17,13 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var const = 2 //Глобальные переменные
-            val backspace = findViewById<ImageView>(R.id.back)
+            //val backspace = findViewById<ImageView>(R.id.back)
             var textEdit = findViewById<EditText>(R.id.editTextText)
             val day =findViewById<EditText>(R.id.day)
             val month = findViewById<EditText>(R.id.month)
             val years = findViewById<EditText>(R.id.years)
             var firt_str= textEdit.text
-            val zero_str = findViewById<TextView>(R.id.zero_str)
+           // val zero_str = findViewById<TextView>(R.id.zero_str)
             val one_str = findViewById<TextView>(R.id.one)
             val two_str = findViewById<TextView>(R.id.two)
             val three_str = findViewById<TextView>(R.id.three)
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             val seven_str = findViewById<TextView>(R.id.seven)
             val eight_str = findViewById<TextView>(R.id.eight)
             val nine_str = findViewById<TextView>(R.id.nine)
-            backspace.setOnClickListener{
+            /*backspace.setOnClickListener{
                 var temp = textEdit.text.toString()
                 textEdit.setText(temp.dropLast(1))
             }
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
             }
             one_str.setOnClickListener{
                 textEdit.setText(textEdit.text.toString()+"1")
-            }
+            }*/
             day.addTextChangedListener{
                 if (day.text.toString().length == 2){
                     month.requestFocus()
