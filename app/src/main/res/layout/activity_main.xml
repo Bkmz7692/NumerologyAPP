@@ -138,10 +138,10 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.562"
+            app:layout_constraintHorizontal_bias="0.622"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.034" />
+            app:layout_constraintVertical_bias="0.058" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/calc"
@@ -166,10 +166,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Label"
-            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintHorizontal_bias="0.91"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.035"
+            app:layout_constraintVertical_bias="0.058"
             app:srcCompat="@drawable/mamont" />
 
         <com.github.mikephil.charting.charts.LineChart
@@ -178,7 +178,7 @@
             android:layout_height="320dp"
             android:layout_marginTop="919dp"
             android:layout_marginBottom="187dp"
-            android:background="#0059ACDA"
+            android:background="#FFFFFF"
             android:padding="9dp"
 
             app:layout_constraintBottom_toBottomOf="parent"
@@ -190,7 +190,6 @@
             android:id="@+id/linearLayout"
             android:layout_width="333dp"
             android:layout_height="150dp"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="200dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"

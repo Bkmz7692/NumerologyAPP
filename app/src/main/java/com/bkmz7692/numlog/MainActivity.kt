@@ -39,44 +39,6 @@ class MainActivity : AppCompatActivity() {
             val seven_str = findViewById<TextView>(R.id.seven)
             val eight_str = findViewById<TextView>(R.id.eight)
             val nine_str = findViewById<TextView>(R.id.nine)
-            /*backspace.setOnClickListener{
-                var temp = textEdit.text.toString()
-                textEdit.setText(temp.dropLast(1))
-            }
-            one_str.setOnClickListener{
-                if(textEdit.text.toString().length == 2 || textEdit.text.toString().length ==4){textEdit.setText(textEdit.text.toString()+".1")}
-                else{textEdit.setText(textEdit.text.toString()+".1")}
-            }
-            zero_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"0")
-            }
-            two_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"2")
-            }
-            three_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"3")
-            }
-            four_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"4")
-            }
-            five_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"5")
-            }
-            six_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"6")
-            }
-            seven_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"7")
-            }
-            eight_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"8")
-            }
-            nine_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"9")
-            }
-            one_str.setOnClickListener{
-                textEdit.setText(textEdit.text.toString()+"1")
-            }*/
             day.addTextChangedListener{
                 if (day.text.toString().length == 2){
                     month.requestFocus()
