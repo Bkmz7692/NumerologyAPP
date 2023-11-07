@@ -256,7 +256,9 @@ class MainActivity : AppCompatActivity() {
                     if (three >1){
                         three_ras.text = "Тут будет больше нормы для 3"
                     }
-
+                    if (three == 0){
+                        three_ras.text = "Тут будет Меньше нормы для 3"
+                    }
                     //====
                     if (four== 1){
                         four_ras.text =
@@ -268,6 +270,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     if (four >1){
                         four_ras.text = "Тут будет больше нормы для 4"
+                    }
+                    if (four <1){
+                        four_ras.text = "Тут будет меньше нормы для 4"
                     }
 
                     //====
@@ -281,6 +286,9 @@ class MainActivity : AppCompatActivity() {
                     if (five >1){
                         five_ras.text = "Тут будет больше нормы для 5"
                     }
+                    if (five <1){
+                        five_ras.text = "Тут будет меньше нормы для 5"
+                    }
                     //====
                     if (six== 1){
                         six_ras.text = "6– логика больших систем, мужская логика, аналитический ум, умение структурировать,\n" +
@@ -291,14 +299,19 @@ class MainActivity : AppCompatActivity() {
                     if (six >1){
                         six_ras.text = "Тут будет больше нормы для 6"
                     }
+                    if (six <1){
+                        six_ras.text = "Тут будет меньше нормы для 6"
+                    }
                     //====
                     if (seven == 1){
                         seven_ras.text =
-                                "7 – интуиция: “знаю, что надо делать так, но не знаю почему”. Это полезная\n" +
-                                "подсказка в данный момент жизни, “здесь и сейчас”, не основанная на фактах."
+                            "7 – интуиция: “знаю, что надо делать так, но не знаю почему”. Это полезная\nподсказка в данный момент жизни, “здесь и сейчас”, не основанная на фактах."
                     }
                     if (seven >1){
                         seven_ras.text = "Тут будет больше нормы для 7"
+                    }
+                    if (seven <1){
+                        seven_ras.text = "Тут будет меньше нормы для 7"
                     }
                     //====
                     if (eight == 1){
@@ -308,6 +321,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     if (eight >1){
                         eight_ras.text = "Тут будет больше нормы для 8"
+                    }
+                    if (eight <1){
+                        eight_ras.text = "Тут будет меньше нормы для 8"
                     }
                     //====
                     if (nine == 2){
@@ -323,8 +339,104 @@ class MainActivity : AppCompatActivity() {
                         nine_ras.text = "Тут будет меньше нормы для 9"
                     }
 
+                    //Графики
+                    //Настройка данных ===============================================
+                    val lineChart = findViewById(R.id.lineChart) as LineChart
+                    val sudba_arr = mutableListOf<Entry>()
+                    val volya_arr = mutableListOf<Entry>()
+
+                    //Настройки графа===================================================
+                    println("ОТЛАДКА ДЛЯ ГРАФОВ")
+                    println(digits)
+                    val day_monnth = digits.substring(0..3)
+                    var proizv_sud = day_monnth.toInt() * year.toInt()
+                    println("ПРОИЗВЕДЕНИЕ СУДЬБЫ $proizv_sud")
+                    val proizv_sud_str = proizv_sud.toString()
+                    if (proizv_sud.toString().length==7){
+                        println("ДЛИНА В НОРМЕ")
+                        val sud_st = proizv_sud_str.get(0)+".0"
+                        val sud_nd = proizv_sud_str.get(1)+".0"
+                        val sud_four = proizv_sud_str.get(3)+".0"
+                        val sud_five = proizv_sud_str.get(4)+".0"
+                        val sud_three = proizv_sud_str.get(2)+".0"
+                        val sud_six = proizv_sud_str.get(5)+".0"
+                        val sud_seven= proizv_sud_str.get(6)+".0"
+                        sudba_arr.add(Entry(0f, sud_st.toFloat()))
+                        println(sud_st.toFloat())
+                        sudba_arr.add(Entry(12f,  sud_nd.toFloat()))
+                        sudba_arr.add(Entry(24f,  sud_three.toFloat()))
+                        sudba_arr.add(Entry(36f,  sud_four.toFloat()))
+                        sudba_arr.add(Entry(48f,  sud_five.toFloat()))
+                        sudba_arr.add(Entry(64f,  sud_six.toFloat()))
+                        sudba_arr.add(Entry(72f,  sud_seven.toFloat()))
+                    }
+                    else{
+                        println("МЕНЯЮ ДЛИНУ")
+                        sudba_arr.add(Entry(0f,  0f))
+                        val sud_nd = proizv_sud_str.get(0)+".0"
+                        val sud_three = proizv_sud_str.get(1)+".0"
+                        val sud_four = proizv_sud_str.get(2)+".0"
+                        val sud_five = proizv_sud_str.get(3)+".0"
+
+                        val sud_six = proizv_sud_str.get(4)+".0"
+                        val sud_seven= proizv_sud_str.get(5)+".0"
+
+                        sudba_arr.add(Entry(12f,  sud_nd.toFloat()))
+                        sudba_arr.add(Entry(24f,  sud_three.toFloat()))
+                        sudba_arr.add(Entry(36f,  sud_four.toFloat()))
+                        sudba_arr.add(Entry(48f,  sud_five.toFloat()))
+                        sudba_arr.add(Entry(64f,  sud_six.toFloat()))
+                        sudba_arr.add(Entry(72f,  sud_seven.toFloat()))
+                    }
+                    val digit_for_volya = digits.replace("0","1")
+                    val v_proizv = digit_for_volya.substring(0..3).toInt()* digit_for_volya.slice(digit_for_volya.length - 4 until digit_for_volya.length).toInt()
+                    println("ВОЛЯ id" + v_proizv.toString().get(3))
+                    println("ВОЛЯ " + v_proizv.toString())
+                    val vol_st= v_proizv.toString().get(0)+".0"
+                    val vol_nd= v_proizv.toString().get(1)+".0"
+                    val vol_three= v_proizv.toString().get(2)+".0"
+                    val vol_four= v_proizv.toString().get(3)+".0"
+                    val vol_five= v_proizv.toString().get(4)+".0"
+                    val vol_six= v_proizv.toString().get(5)+".0"
+                    val vol_seven= v_proizv.toString().get(6)+".0"
+                    volya_arr.add(Entry(0f,  vol_st.toFloat()))
+                    volya_arr.add(Entry(12f, vol_nd.toFloat()))
+                    volya_arr.add(Entry(24f, vol_three.toFloat()))
+                    volya_arr.add(Entry(36f, vol_four.toFloat()))
+                    volya_arr.add(Entry(48f, vol_five.toFloat()))
+                    volya_arr.add(Entry(64f, vol_six.toFloat()))
+                    volya_arr.add(Entry(72f, vol_seven.toFloat()))
+                    println(v_proizv.toString().get(0))
+
+                    var volya = LineDataSet(volya_arr, "Воля")
+                    volya.color = Color.RED
+                    var sudba = LineDataSet(sudba_arr, "Судьба")
+                    sudba.color = Color.CYAN
+                    val lineData = LineData(sudba,volya)
+                    lineChart.data = lineData
+                    lineChart.setDrawBorders(false)
+                    lineData.setDrawValues(false)
+                    lineChart.description.isEnabled = false
+                    lineChart.legend.isEnabled = true
+                    lineChart.legend.isWordWrapEnabled = false
+                    lineChart.setTouchEnabled(false)
+                    lineChart.legend.textColor = Color.BLACK
+                    lineChart.xAxis.labelCount = 8
+                    lineChart.axisLeft.labelCount=10
+                    //lineChart.xAxis.setDrawGridLines(false)
+                    //lineChart.axisLeft.setDrawGridLines(false)
+                    lineChart.axisLeft.mAxisMaximum = 10f
+                    lineChart.xAxis.mAxisMaximum = 92f
+                    lineChart.axisLeft.textColor = Color.WHITE
+                    lineChart.xAxis.textColor = Color.WHITE
+                    lineChart.xAxis.granularity = 12f
+                    lineChart.axisRight.isEnabled = false
+                    lineChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+                    lineChart.axisRight.setDrawGridLines(false)
+                    lineChart.invalidate()
 
 
+                    //Конец Графика ===========================================================================================
 
                     //Конец расшифровки========================================================================
                 }
@@ -336,112 +448,6 @@ class MainActivity : AppCompatActivity() {
 
                 val toast = Toast.makeText(applicationContext, text, duration)
                 toast.show()}
-
-
-
-            //Графики
-            //Настройка данных ===============================================
-            val lineChart = findViewById(R.id.lineChart) as LineChart
-            val sudba_arr = mutableListOf<Entry>()
-            val volya_arr = mutableListOf<Entry>()
-
-            //Настройки графа===================================================
-            println("ОТЛАДКА ДЛЯ ГРАФОВ")
-            println(digits)
-            val day_monnth = digits.substring(0..3)
-            var proizv_sud = day_monnth.toInt() * year.toInt()
-            println("ПРОИЗВЕДЕНИЕ СУДЬБЫ $proizv_sud")
-            val proizv_sud_str = proizv_sud.toString()
-            if (proizv_sud.toString().length==7){
-                println("ДЛИНА В НОРМЕ")
-                val sud_st = proizv_sud_str.get(0)+".0"
-                val sud_nd = proizv_sud_str.get(1)+".0"
-                val sud_four = proizv_sud_str.get(3)+".0"
-                val sud_five = proizv_sud_str.get(4)+".0"
-                val sud_three = proizv_sud_str.get(2)+".0"
-                val sud_six = proizv_sud_str.get(5)+".0"
-                val sud_seven= proizv_sud_str.get(6)+".0"
-                sudba_arr.add(Entry(0f, sud_st.toFloat()))
-                println(sud_st.toFloat())
-                sudba_arr.add(Entry(12f,  sud_nd.toFloat()))
-                sudba_arr.add(Entry(24f,  sud_three.toFloat()))
-                sudba_arr.add(Entry(36f,  sud_four.toFloat()))
-                sudba_arr.add(Entry(48f,  sud_five.toFloat()))
-                sudba_arr.add(Entry(64f,  sud_six.toFloat()))
-                sudba_arr.add(Entry(72f,  sud_seven.toFloat()))
-            }
-            else{
-                println("МЕНЯЮ ДЛИНУ")
-                sudba_arr.add(Entry(0f,  0f))
-                val sud_nd = proizv_sud_str.get(0)+".0"
-                val sud_three = proizv_sud_str.get(1)+".0"
-                val sud_four = proizv_sud_str.get(2)+".0"
-                val sud_five = proizv_sud_str.get(3)+".0"
-
-                val sud_six = proizv_sud_str.get(4)+".0"
-                val sud_seven= proizv_sud_str.get(5)+".0"
-
-                sudba_arr.add(Entry(12f,  sud_nd.toFloat()))
-                sudba_arr.add(Entry(24f,  sud_three.toFloat()))
-                sudba_arr.add(Entry(36f,  sud_four.toFloat()))
-                sudba_arr.add(Entry(48f,  sud_five.toFloat()))
-                sudba_arr.add(Entry(64f,  sud_six.toFloat()))
-                sudba_arr.add(Entry(72f,  sud_seven.toFloat()))
-            }
-
-
-
-
-            val digit_for_volya = digits.replace("0","1")
-            val v_proizv = digit_for_volya.substring(0..3).toInt()* digit_for_volya.slice(digit_for_volya.length - 4 until digit_for_volya.length).toInt()
-            println("ВОЛЯ id" + v_proizv.toString().get(3))
-            println("ВОЛЯ " + v_proizv.toString())
-            val vol_st= v_proizv.toString().get(0)+".0"
-            val vol_nd= v_proizv.toString().get(1)+".0"
-            val vol_three= v_proizv.toString().get(2)+".0"
-            val vol_four= v_proizv.toString().get(3)+".0"
-            val vol_five= v_proizv.toString().get(4)+".0"
-            val vol_six= v_proizv.toString().get(5)+".0"
-            val vol_seven= v_proizv.toString().get(6)+".0"
-            volya_arr.add(Entry(0f,  vol_st.toFloat()))
-            volya_arr.add(Entry(12f, vol_nd.toFloat()))
-            volya_arr.add(Entry(24f, vol_three.toFloat()))
-            volya_arr.add(Entry(36f, vol_four.toFloat()))
-            volya_arr.add(Entry(48f, vol_five.toFloat()))
-            volya_arr.add(Entry(64f, vol_six.toFloat()))
-            volya_arr.add(Entry(72f, vol_seven.toFloat()))
-            println(v_proizv.toString().get(0))
-
-            var volya = LineDataSet(volya_arr, "Воля")
-            volya.color = Color.RED
-            var sudba = LineDataSet(sudba_arr, "Судьба")
-            sudba.color = Color.CYAN
-            val lineData = LineData(sudba,volya)
-            lineChart.data = lineData
-            lineChart.setDrawBorders(false)
-            lineData.setDrawValues(true)
-            lineChart.description.isEnabled = false
-            lineChart.legend.isEnabled = true
-            lineChart.legend.isWordWrapEnabled = false
-            lineChart.setTouchEnabled(false)
-            lineChart.legend.textColor = Color.BLACK
-            lineChart.xAxis.labelCount = 8
-            lineChart.axisLeft.labelCount=10
-            //lineChart.xAxis.setDrawGridLines(false)
-            //lineChart.axisLeft.setDrawGridLines(false)
-            lineChart.axisLeft.mAxisMaximum = 10f
-            lineChart.xAxis.mAxisMaximum = 92f
-            lineChart.axisLeft.textColor = Color.BLACK
-            lineChart.xAxis.textColor = Color.BLACK
-            lineChart.xAxis.granularity = 12f
-            lineChart.axisRight.isEnabled = false
-            lineChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
-            lineChart.axisRight.setDrawGridLines(false)
-            lineChart.invalidate()
-
-
-            //Конец Графика ===========================================================================================
-
 
 
         }

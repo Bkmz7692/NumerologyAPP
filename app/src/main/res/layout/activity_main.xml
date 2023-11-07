@@ -177,7 +177,7 @@
             android:layout_width="318dp"
             android:layout_height="320dp"
             android:layout_marginBottom="187dp"
-            android:background="#20FFFFFF"
+            android:background="#00FFFFFF"
             android:padding="9dp"
 
             android:visibility="visible"
