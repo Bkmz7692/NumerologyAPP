@@ -4,5 +4,6 @@
         <!-- Customize your dark theme here. -->
         <item name="colorPrimary">#E1BEE7</item>
         <item name="android:statusBarColor">#00BB76FF</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>

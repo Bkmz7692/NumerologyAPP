@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
             WindowCompat.setDecorFitsSystemWindows(window, false)
             setContentView(R.layout.activity_main)
-
             var const: Int  //Глобальные переменные
             val day =findViewById<EditText>(R.id.day)
             val month = findViewById<EditText>(R.id.month)
@@ -54,18 +53,32 @@ class MainActivity : AppCompatActivity() {
             val eight_ras = findViewById<TextView>(R.id.eight_ras)
             val four_ras = findViewById<TextView>(R.id.four_ras)
             val nine_ras = findViewById<TextView>(R.id.nine_ras)
+            val calc = findViewById<Button>(R.id.calc)
             val date = Date()
             day.addTextChangedListener{
                 if (day.text.toString().length == 2){
                     month.requestFocus()
+                    month.setSelection(month.length())
                 }
+
             }
             month.addTextChangedListener{
                 if (month.text.toString().length == 2){
                     years.requestFocus()
+
+                }
+                if (month.text.toString().length == 0){
+                    day.requestFocus()
+                    day.setSelection(day.length())
                 }
             }
-            val num_pos = day.text.toString() + month.text.toString() + years.text.toString()
+            years.addTextChangedListener{
+                if (years.text.toString().length == 0){
+                    month.requestFocus()
+                    month.setSelection(month.length())
+                }
+            }
+
         @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun calculateNumerologicalMatrix(day: EditText, month: EditText, years: EditText ) {
             val num_pos = day.text.toString() + month.text.toString() + years.text.toString()
@@ -100,8 +113,8 @@ class MainActivity : AppCompatActivity() {
                     var charArray = finalrow.toCharArray()
                     charArray.sort()
                     val resultingString = charArray.joinToString(separator = "")
-                    println(resultingString)
-                    //val s = "11222333444456778899999"
+
+
 
                     val counts = mutableMapOf<Char, Int>()
 
@@ -132,14 +145,12 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         two_str.text = "-"
                     }
-
                     println("three = $three")
                     if (three > 0) {
                         three_str.text = "3".repeat(three)
                     } else {
                         three_str.text = "-"
                     }
-
                     println("four = $four")
                     if (four > 0) {
                         four_str.text = "4".repeat(four)
@@ -177,7 +188,6 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         nine_str.text = "-"
                     }
-
                     //Вычисление итоговой цифры
                     val itog = findViewById<TextView>(R.id.itog)
                     var itog_val = sumA
@@ -190,11 +200,9 @@ class MainActivity : AppCompatActivity() {
 
                         }
                         itog.text = itog_val.toString()
-
                     } else {
                         itog.text = sumA.toString()
                     }
-
                     //Вычисление психотипа
                     val psih = findViewById<TextView>(R.id.psih)
                     if (one > two) {
@@ -206,10 +214,8 @@ class MainActivity : AppCompatActivity() {
                     if (one == two) {
                         psih.text = "III"
                     }
-
                     //Вычисление возраста:
                     val formatter = SimpleDateFormat("yyyy")
-
                     val current = formatter.format(date)
                     val age = current.toInt() - year.toInt()
                     age_str.text = age.toString()
@@ -224,7 +230,6 @@ class MainActivity : AppCompatActivity() {
                     if (one < 2) {
                         one_ras.text = "Тут будет больше нормы для 1"
                     }
-
                     if (two == 2) {
                         two_ras.text =
                             "2 - плотная энергия тела, энергия действий. Мышечная сила, работоспособность, сила воли, упрямство, агрессия, способность манипулировать, управлять другими людьми. Количество двоек показывает величину природного биополя, защитного “скафандра” вокруг человека. Это 'что МОГУ сделать'."
@@ -257,7 +262,6 @@ class MainActivity : AppCompatActivity() {
                     if (four < 1) {
                         four_ras.text = "Тут будет меньше нормы для 4"
                     }
-
                     //====
                     if (five == 1) {
                         five_ras.text =
@@ -325,10 +329,10 @@ class MainActivity : AppCompatActivity() {
                     println(digits)
                     val day_monnth = digits.substring(0..3)
                     val proizv_sud = day_monnth.toInt() * year.toInt()
-                    println("ПРОИЗВЕДЕНИЕ СУДЬБЫ $proizv_sud")
+
                     val proizv_sud_str = proizv_sud.toString()
                     if (proizv_sud.toString().length == 7) {
-                        println("ДЛИНА В НОРМЕ")
+
                         val sud_st = proizv_sud_str.get(0) + ".0"
                         val sud_nd = proizv_sud_str.get(1) + ".0"
                         val sud_four = proizv_sud_str.get(3) + ".0"
@@ -337,7 +341,6 @@ class MainActivity : AppCompatActivity() {
                         val sud_six = proizv_sud_str.get(5) + ".0"
                         val sud_seven = proizv_sud_str.get(6) + ".0"
                         sudba_arr.add(Entry(0f, sud_st.toFloat()))
-                        println(sud_st.toFloat())
                         sudba_arr.add(Entry(12f, sud_nd.toFloat()))
                         sudba_arr.add(Entry(24f, sud_three.toFloat()))
                         sudba_arr.add(Entry(36f, sud_four.toFloat()))
@@ -345,16 +348,13 @@ class MainActivity : AppCompatActivity() {
                         sudba_arr.add(Entry(64f, sud_six.toFloat()))
                         sudba_arr.add(Entry(72f, sud_seven.toFloat()))
                     } else {
-                        println("МЕНЯЮ ДЛИНУ")
                         sudba_arr.add(Entry(0f, 0f))
                         val sud_nd = proizv_sud_str[0] + ".0"
                         val sud_three = proizv_sud_str[1] + ".0"
                         val sud_four = proizv_sud_str[2] + ".0"
                         val sud_five = proizv_sud_str[3] + ".0"
-
                         val sud_six = proizv_sud_str[4] + ".0"
                         val sud_seven = proizv_sud_str[5] + ".0"
-
                         sudba_arr.add(Entry(12f, sud_nd.toFloat()))
                         sudba_arr.add(Entry(24f, sud_three.toFloat()))
                         sudba_arr.add(Entry(36f, sud_four.toFloat()))
@@ -437,7 +437,8 @@ class MainActivity : AppCompatActivity() {
             month.setText(c_month.toString())
             years.setText(c_year.toString())
             calculateNumerologicalMatrix(day, month, years)
-            val calc = findViewById<Button>(R.id.calc)
+            years.setSelection(years.length())
+
         calc.setOnClickListener{calculateNumerologicalMatrix(day, month, years)}
     }
 }

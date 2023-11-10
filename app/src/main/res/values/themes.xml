@@ -3,9 +3,9 @@
     <style name="Base.Theme.NumLog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="android:statusBarColor">#00303030</item>
-
+        <item name="android:windowIsTranslucent">true</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.NumLog" parent="Base.Theme.NumLog" />
+
 </resources>
