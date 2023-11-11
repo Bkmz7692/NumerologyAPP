@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/logo"
-        android:layout_width="415dp"
-        android:layout_height="124dp"
+        android:layout_width="418dp"
+        android:layout_height="212dp"
         android:layout_marginTop="303dp"
         android:layout_marginBottom="304dp"
         android:orientation="vertical"
@@ -36,5 +36,13 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="34sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:paddingTop="15sp"
+            android:progressTint="#FFFFFF" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

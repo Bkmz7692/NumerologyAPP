@@ -38,11 +38,22 @@
                 android:textSize="25sp" />
 
             <TextView
+                android:id="@+id/psih_ras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5sp"
+                android:paddingEnd="5sp"
+                android:paddingBottom="15sp"
+                android:text="-"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+
+            <TextView
                 android:id="@+id/one_ras"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -52,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -62,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -72,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -82,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -92,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -102,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -112,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
@@ -122,10 +133,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="5sp"
-                android:paddingBottom="5sp"
+                android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
+
         </LinearLayout>
 
         <TableLayout
@@ -133,6 +145,7 @@
             android:layout_width="298dp"
             android:layout_height="299dp"
             android:layout_marginBottom="1000dp"
+            android:background="@drawable/table_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -147,6 +160,7 @@
                     android:id="@+id/one"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -156,6 +170,7 @@
                     android:id="@+id/four"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -165,6 +180,7 @@
                     android:id="@+id/seven"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -179,7 +195,8 @@
                     android:id="@+id/two"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:includeFontPadding="false"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="true"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -189,6 +206,7 @@
                     android:id="@+id/five"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -198,6 +216,7 @@
                     android:id="@+id/eight"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -212,6 +231,7 @@
                     android:id="@+id/three"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -221,6 +241,7 @@
                     android:id="@+id/six"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -230,6 +251,7 @@
                     android:id="@+id/nine"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
+                    android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
@@ -289,17 +311,17 @@
             android:id="@+id/lineChart"
             android:layout_width="318dp"
             android:layout_height="320dp"
-            android:layout_marginBottom="187dp"
             android:background="#00FFFFFF"
             android:padding="9dp"
 
+            android:paddingBottom="15sp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.098" />
+            app:layout_constraintVertical_bias="0.039" />
 
         <LinearLayout
             android:id="@+id/linearLayout"

@@ -18,6 +18,7 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.temporal.ChronoField
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             val four_ras = findViewById<TextView>(R.id.four_ras)
             val nine_ras = findViewById<TextView>(R.id.nine_ras)
             val calc = findViewById<Button>(R.id.calc)
+            val psih_ras = findViewById<TextView>(R.id.psih_ras)
             val date = Date()
             day.addTextChangedListener{
                 if (day.text.toString().length == 2){
@@ -207,12 +209,25 @@ class MainActivity : AppCompatActivity() {
                     val psih = findViewById<TextView>(R.id.psih)
                     if (one > two) {
                         psih.text = "I"
+                        psih_ras.text = "Первый психотип- это много идей, инициативы, желаний, не хватает физической энергии на все придуманные задачи и идеи. Вам проще предлагать, придумывать, генерировать идеи, но с реализацией могут возникнуть трудности. Для реализации всех идей вам понадобятся единомышленники и помощники. \n" +
+                                "Можете выступать в роли организатора, есть потребность общаться или проявляться в творчестве. \n" +
+                                "Если качество не реализовано, то есть претензии к себе, самоедство,  может появится желание делать ещё и можно перегрузиться словить выгорание, может появиться хроническая усталость. "
                     }
                     if (one < two) {
                         psih.text = "II"
+                        psih_ras.text = "Второй психотип - это повышенная трудоспособность, энергии всегда больше, чем идей. \n" +
+                                " Идей всегда не хватает, но есть потребность что-то делать. Вам проще действовать, чем думать или планировать. Часто проще взять готовую идею или алгоритм и действовать по уже имеющейся стратегии. \n" +
+                                "Вам могут нравиться природа, открытые пространства, физические нагрузки и в целом трудности, у вас высокая степень выживаемости.\n" +
+                                "Вы можете влиять на других за счет своего биополя, манипулировать людьми и даже в какой-то момент подавлять людей, чье поле слабее вашего. \n" +
+                                "Если качество не реализовано, то есть пассивность, претензии к окружающим, плохое настроение, состояние инертности, ничего не хочется. "
                     }
                     if (one == two) {
                         psih.text = "III"
+                        psih_ras.text = "Второй психотип - это повышенная трудоспособность, энергии всегда больше, чем идей. \n" +
+                                " Идей всегда не хватает, но есть потребность что-то делать. Вам проще действовать, чем думать или планировать. Часто проще взять готовую идею или алгоритм и действовать по уже имеющейся стратегии. \n" +
+                                "Вам могут нравиться природа, открытые пространства, физические нагрузки и в целом трудности, у вас высокая степень выживаемости.\n" +
+                                "Вы можете влиять на других за счет своего биополя, манипулировать людьми и даже в какой-то момент подавлять людей, чье поле слабее вашего. \n" +
+                                "Если качество не реализовано, то есть пассивность, претензии к окружающим, плохое настроение, состояние инертности, ничего не хочется. "
                     }
                     //Вычисление возраста:
                     val formatter = SimpleDateFormat("yyyy")
@@ -324,6 +339,7 @@ class MainActivity : AppCompatActivity() {
                     val sudba_arr = mutableListOf<Entry>()
                     val volya_arr = mutableListOf<Entry>()
 
+
                     //Настройки графа===================================================
                     println("ОТЛАДКА ДЛЯ ГРАФОВ")
                     println(digits)
@@ -381,12 +397,16 @@ class MainActivity : AppCompatActivity() {
                     volya_arr.add(Entry(64f, vol_six.toFloat()))
                     volya_arr.add(Entry(72f, vol_seven.toFloat()))
                     println(v_proizv.toString().get(0))
-
+                    val c_year_chart = mutableListOf<Entry>()
+                    c_year_chart.add(Entry(age.toString().toFloat(), 0f))
+                    c_year_chart.add(Entry(age.toString().toFloat(), 10f))
+                    val c_year = LineDataSet(c_year_chart, "")
                     val volya = LineDataSet(volya_arr, "Воля")
                     volya.color = Color.RED
                     val sudba = LineDataSet(sudba_arr, "Судьба")
                     sudba.color = Color.CYAN
-                    val lineData = LineData(sudba, volya)
+                    c_year.color = Color.BLUE
+                    val lineData = LineData(sudba, volya, c_year)
                     lineChart.data = lineData
                     lineChart.setDrawBorders(false)
                     lineData.setDrawValues(false)
@@ -394,7 +414,7 @@ class MainActivity : AppCompatActivity() {
                     lineChart.legend.isEnabled = true
                     lineChart.legend.isWordWrapEnabled = false
                     lineChart.setTouchEnabled(false)
-                    lineChart.legend.textColor = Color.BLACK
+                    lineChart.legend.textColor = Color.WHITE
                     lineChart.xAxis.labelCount = 8
                     lineChart.axisLeft.labelCount = 10
                     lineChart.axisLeft.mAxisMaximum = 10f
