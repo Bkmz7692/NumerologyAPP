@@ -399,7 +399,7 @@ class MainActivity : AppCompatActivity() {
                     println(v_proizv.toString().get(0))
                     val c_year_chart = mutableListOf<Entry>()
                     c_year_chart.add(Entry(age.toString().toFloat(), 0f))
-                    c_year_chart.add(Entry(age.toString().toFloat(), 10f))
+                    c_year_chart.add(Entry(age.toString().toFloat(), 9f))
                     val c_year = LineDataSet(c_year_chart, "")
                     val volya = LineDataSet(volya_arr, "Воля")
                     volya.color = Color.RED
@@ -416,8 +416,10 @@ class MainActivity : AppCompatActivity() {
                     lineChart.setTouchEnabled(false)
                     lineChart.legend.textColor = Color.WHITE
                     lineChart.xAxis.labelCount = 8
-                    lineChart.axisLeft.labelCount = 10
+                    lineChart.axisLeft.labelCount = 11
                     lineChart.axisLeft.mAxisMaximum = 10f
+                    lineChart.axisLeft.axisMinimum = 0f
+                    lineChart.axisLeft.granularity = 1f
                     lineChart.xAxis.mAxisMaximum = 92f
                     lineChart.axisLeft.textColor = Color.WHITE
                     lineChart.xAxis.textColor = Color.WHITE

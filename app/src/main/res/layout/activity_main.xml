@@ -150,7 +150,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calc"
-            app:layout_constraintVertical_bias="0.06999999">
+            app:layout_constraintVertical_bias="0.100000024">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -292,7 +292,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DaTE"
-            app:layout_constraintVertical_bias="0.026" />
+            app:layout_constraintVertical_bias="0.00999999" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -318,22 +318,24 @@
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
             app:layout_constraintVertical_bias="0.039" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="333dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="700dp"
+            android:layout_width="303dp"
+            android:layout_height="147dp"
+            android:layout_marginBottom="600dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-            app:layout_constraintVertical_bias="0.110000014">
+            app:layout_constraintVertical_bias="0.04000002">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -342,7 +344,7 @@
 
                 <TextView
                     android:id="@+id/textView4"
-                    android:layout_width="276dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Итоговая цифра:"
@@ -352,8 +354,8 @@
 
                 <TextView
                     android:id="@+id/itog"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="79dp"
+                    android:layout_height="124dp"
                     android:fontFamily="sans-serif"
                     android:text="-"
                     android:textAlignment="center"
@@ -370,7 +372,7 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="276dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Психотип:"
@@ -380,8 +382,8 @@
 
                 <TextView
                     android:id="@+id/psih"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
+                    android:layout_width="79dp"
+                    android:layout_height="match_parent"
                     android:fontFamily="sans-serif"
                     android:text="-"
                     android:textAlignment="center"
@@ -397,7 +399,7 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="276dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="Возраст:"
@@ -407,7 +409,7 @@
 
                 <TextView
                     android:id="@+id/age"
-                    android:layout_width="100dp"
+                    android:layout_width="79dp"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif"
                     android:text="-"
