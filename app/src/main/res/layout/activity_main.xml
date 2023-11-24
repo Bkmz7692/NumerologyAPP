@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="fill_parent"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="190dp">
 
@@ -141,25 +141,24 @@
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="298dp"
-            android:layout_height="299dp"
-            android:layout_marginBottom="1000dp"
+            android:layout_width="300sp"
+            android:layout_height="300sp"
+            android:layout_marginTop="30sp"
             android:background="@drawable/table_bg"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calc"
-            app:layout_constraintVertical_bias="0.060000002">
+            app:layout_constraintTop_toBottomOf="@+id/calc">
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="300sp"
+                android:layout_height="100sp">
 
                 <TextView
                     android:id="@+id/one"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -170,7 +169,7 @@
                     android:id="@+id/four"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -181,7 +180,7 @@
                     android:id="@+id/seven"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -190,14 +189,14 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="300sp"
+                android:layout_height="100sp">
 
                 <TextView
                     android:id="@+id/two"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:includeFontPadding="true"
                     android:text="-"
@@ -209,7 +208,7 @@
                     android:id="@+id/five"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -220,7 +219,7 @@
                     android:id="@+id/eight"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -229,14 +228,14 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="300sp"
+                android:layout_height="100sp">
 
                 <TextView
                     android:id="@+id/three"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -247,7 +246,7 @@
                     android:id="@+id/six"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"
@@ -258,7 +257,7 @@
                     android:id="@+id/nine"
                     android:layout_width="100sp"
                     android:layout_height="100sp"
-                    android:background="@drawable/table_bg"
+                    android:background="@null"
                     android:gravity="center_vertical"
                     android:text="-"
                     android:textAlignment="center"

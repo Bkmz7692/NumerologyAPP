@@ -2,7 +2,6 @@ package com.bkmz7692.numlog
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
@@ -18,7 +17,6 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.time.temporal.ChronoField
