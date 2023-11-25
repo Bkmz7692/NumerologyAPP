@@ -146,7 +146,7 @@
             android:layout_marginTop="30sp"
             android:layout_marginBottom="20sp"
             android:background="@drawable/table_bg"
-            app:layout_constraintBottom_toTopOf=""
+            app:layout_constraintBottom_toTopOf="@id/micro"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calc">
@@ -164,7 +164,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/four"
@@ -175,7 +175,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/seven"
@@ -186,7 +186,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
             </TableRow>
 
             <TableRow
@@ -203,7 +203,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/five"
@@ -214,7 +214,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/eight"
@@ -225,7 +225,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
             </TableRow>
 
             <TableRow
@@ -241,7 +241,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/six"
@@ -252,7 +252,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
 
                 <TextView
                     android:id="@+id/nine"
@@ -263,7 +263,7 @@
                     android:text="-"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="34sp" />
+                    android:textSize="120px" />
             </TableRow>
 
             <TableRow
@@ -325,10 +325,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/micro" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/micro"
             android:layout_width="303dp"
             android:layout_height="147dp"
             android:layout_marginTop="30sp"
