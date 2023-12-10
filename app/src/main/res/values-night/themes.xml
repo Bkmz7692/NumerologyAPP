@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NumLog" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">#E1BEE7</item>
-        <item name="android:statusBarColor">#00BB76FF</item>
+        <item name="colorPrimary">#5E72D6</item>
+        <item name="android:statusBarColor">#7F26E8</item>
         <item name="android:windowIsTranslucent">true</item>
     </style>
 </resources>

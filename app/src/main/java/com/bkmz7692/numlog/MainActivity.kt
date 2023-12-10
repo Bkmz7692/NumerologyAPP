@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.core.widget.addTextChangedListener
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
@@ -27,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         @RequiresApi(Build.VERSION_CODES.O)
         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            WindowCompat.setDecorFitsSystemWindows(window, false)
+
             setContentView(R.layout.activity_main)
             var const: Int  //Глобальные переменные
             val day =findViewById<EditText>(R.id.day)
