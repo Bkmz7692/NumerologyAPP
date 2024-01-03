@@ -37,8 +37,7 @@
                 android:text="Расшифровка"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/psih_ras"
@@ -55,7 +54,7 @@
                 android:id="@+id/one_ras"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45sp"
+                android:paddingTop="5sp"
                 android:paddingBottom="15sp"
                 android:text="-"
                 android:textColor="#FFFFFF"
@@ -360,8 +359,7 @@
                     android:text="Итоговая цифра:"
                     android:textAlignment="viewStart"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/itog"
@@ -391,8 +389,7 @@
                     android:text="Психотип:"
                     android:textAlignment="viewStart"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/psih"
@@ -402,8 +399,10 @@
                     android:paddingEnd="10sp"
                     android:text="-"
                     android:textAlignment="viewEnd"
+                    android:textAllCaps="true"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -421,8 +420,7 @@
                     android:text="Возраст:"
                     android:textAlignment="textStart"
                     android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/age"
